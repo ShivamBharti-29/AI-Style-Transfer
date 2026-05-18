@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Increased padding-top to give more gap from the 'StyleForge AI' header -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh; padding-top: 120px; padding-bottom: 60px;">
+    
+    <!-- Increased max-width for better breathability -->
+    <div class="auth-card">
+        <div class="auth-header">
+            SIGN IN
+        </div>
+
+        <div class="auth-body text-center">
+            <div class="logo-circle mx-auto mb-3">
+                <span class="logo-text">SF<br>AI</span>
+            </div>
+
+            <h5 class="journey-text mb-4">SIGN IN TO YOUR ARTISTIC JOURNEY</h5>
+
+            <!-- Social Section -->
+            <div class="social-section p-3 mb-4">
+                <p class="small text-secondary mb-3" style="font-family: 'Orbitron'; font-size: 0.7rem;">SIGN IN WITH</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <button class="social-btn google-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="16"> Google
+                    </button>
+                    <button class="social-btn fb-btn">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </button>
+                    <button class="social-btn insta-btn">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </button>
+                </div>
+            </div>
+
+            <div class="separator mb-4">
+                <span>OR USE YOUR EMAIL</span>
+            </div>
+
+            <form class="text-start px-4">
+                <div class="mb-4">
+                    <label class="form-label small text-white" style="font-family: 'Orbitron';">EMAIL ADDRESS</label>
+                    <input type="email" class="form-control neon-input" placeholder="Enter your email">
+                </div>
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label small text-white" style="font-family: 'Orbitron';">PASSWORD</label>
+                        <a href="#" class="small text-secondary text-decoration-none" style="font-size: 0.7rem;">forgot password?</a>
+                    </div>
+                    <input type="password" class="form-control neon-input" placeholder="••••••••">
+                </div>
+
+                <button type="submit" class="btn btn-login w-100 py-2 fw-bold mb-3">LOG IN</button>
+                
+                <p class="text-secondary tiny-text mt-2 text-center">(NOTE: This is a demo; social login is simulated.)</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 1. INCREASED WIDTH: Changed max-width from 450px to 500px */
+    .auth-card {
+        width: 100%;
+        max-width: 500px; 
+        background: rgba(13, 13, 26, 0.98);
+        border: 1px solid rgba(168, 85, 247, 0.6);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
+    }
+
+    .auth-header {
+        background: rgba(168, 85, 247, 0.1);
+        border-bottom: 1px solid rgba(168, 85, 247, 0.4);
+        padding: 12px;
+        text-align: center;
+        font-family: 'Orbitron';
+        color: #fff;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
+
+    .auth-body { padding: 40px 30px; }
+
+    .logo-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: #0d0d1a;
+        border: 2px solid #a855f7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    }
+
+    .logo-text { font-family: 'Orbitron'; color: #fff; line-height: 1.1; font-size: 1rem; }
+
+    .journey-text { font-family: 'Orbitron'; color: #fff; font-size: 0.8rem; opacity: 0.9; }
+
+    /* Buttons & Inputs */
+    .social-btn {
+        flex: 1;
+        border: none;
+        padding: 10px 5px;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .google-btn { background: #ffffff; color: #333; }
+    .fb-btn { background: #1877f2; color: white; }
+    .insta-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+
+    .neon-input {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(168, 85, 247, 0.3) !important;
+        color: white !important;
+        border-radius: 8px;
+        padding: 10px 15px;
+    }
+
+    .neon-input:focus {
+        border-color: #a855f7 !important;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+
+    .btn-login {
+        background: #10b981;
+        border: none;
+        color: white;
+        border-radius: 8px;
+        font-family: 'Orbitron';
+        letter-spacing: 1px;
+    }
+
+    .separator span { background: #0d0d1a; padding: 0 15px; }
+</style>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" style="padding-top: 100px; padding-bottom: 80px;">
+    <h2 class="text-center mb-5" style="font-family: 'Orbitron'; color: white;">GENERATION GALLERY</h2>
+    
+    <div class="row g-4">
+        {% for image in images %}
+        <div class="col-md-4">
+            <div class="glass-morphism p-3 h-100" style="border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 12px; background: rgba(13, 13, 26, 0.8);">
+                <!-- Image Preview -->
+                <div class="position-relative overflow-hidden rounded mb-3">
+                    <!-- Changed from send_image to standard static folder usage -->
+                    <img src="{{ url_for('static', filename='outputs/' + image.url) }}" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                </div>
+
+                <!-- Metadata -->
+                <div class="px-1 mb-3">
+                    <p class="mb-1 text-white small fw-bold" style="font-family: 'Orbitron';">IMAGE NAME: <span class="text-secondary fw-normal">Art #{{ loop.index }}</span></p>
+                    <p class="mb-3 text-white small fw-bold" style="font-family: 'Orbitron';">TIME: <span class="text-secondary fw-normal">{{ image.time }}</span></p>
+                    
+                    <!-- Action Buttons: Download & Delete -->
+                    <div class="d-flex gap-2">
+                        <a href="{{ url_for('static', filename='outputs/' + image.url) }}" download class="btn btn-outline-info flex-grow-1 btn-sm" style="font-family: 'Orbitron';">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <!-- Added the Delete button with a JavaScript call -->
+                        <button class="btn btn-outline-danger btn-sm" onclick="deleteImage('{{ image.url }}')">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+function deleteImage(filename) {
+    if(confirm("Delete this generation?")) {
+        fetch(`/delete/${filename}`, { method: 'POST' })
+        .then(res => res.json())
+        .then(data => { if(data.success) location.reload(); });
+    }
+}
+</script>
+{% endblock %}

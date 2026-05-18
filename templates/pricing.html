@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="padding-top: 100px; padding-bottom: 50px;">
+    <!-- Page Header -->
+    <div class="text-center mb-5">
+        <h1 style="font-family: 'Orbitron'; font-size: 3rem; color: #fff; text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);">PRICING PLANS</h1>
+        <p class="text-secondary">Choose the perfect plan for your creative journey</p>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="row g-4 justify-content-center">
+        
+        <!-- Basic Plan -->
+        <div class="col-md-4">
+            <div class="glass-morphism p-4 h-100 text-center d-flex flex-column" style="border-top: 2px solid #a855f7;">
+                <h3 style="font-family: 'Orbitron';">BASIC</h3>
+                <div class="my-3">
+                    <span class="display-5 fw-bold">$19</span><span class="text-secondary">/mo</span>
+                </div>
+                <ul class="list-unstyled text-secondary mb-auto">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 50 Generations / Month</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Standard Resolution</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Email Support</li>
+                </ul>
+                <button class="btn btn-outline-light rounded-pill mt-4 w-100">Get Started</button>
+            </div>
+        </div>
+
+        <!-- Pro Plan (Highlighted) -->
+        <div class="col-md-4">
+            <div class="glass-morphism p-4 h-100 text-center d-flex flex-column shadow-lg" style="border: 2px solid #a855f7; transform: scale(1.05); background: rgba(168, 85, 247, 0.1);">
+                <span class="badge bg-purple mb-2 mx-auto" style="background: #a855f7; width: fit-content;">MOST POPULAR</span>
+                <h3 style="font-family: 'Orbitron';">PRO</h3>
+                <div class="my-3">
+                    <span class="display-5 fw-bold">$49</span><span class="text-secondary">/mo</span>
+                </div>
+                <ul class="list-unstyled text-secondary mb-auto">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unlimited Generations</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 4K High Resolution</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Priority Support</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Commercial License</li>
+                </ul>
+                <button class="btn btn-primary rounded-pill mt-4 w-100" style="background: #a855f7; border: none;">Go Pro Now</button>
+            </div>
+        </div>
+
+        <!-- Demo/Free Plan -->
+        <div class="col-md-4">
+            <div class="glass-morphism p-4 h-100 text-center d-flex flex-column" style="border-top: 2px solid #10b981;">
+                <h3 style="font-family: 'Orbitron';">DEMO</h3>
+                <div class="my-3">
+                    <span class="display-5 fw-bold">$0</span><span class="text-secondary">/free</span>
+                </div>
+                <ul class="list-unstyled text-secondary mb-auto">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 5 Generations</li>
+                    <li class="mb-2"><i class="fas fa-info-circle text-info me-2"></i> Watermarked Outputs</li>
+                    <li class="mb-2"><i class="fas fa-star text-warning me-2"></i> Perfect for Testing</li>
+                </ul>
+                <p class="small text-info mt-3">Special offer for demo project reviewers!</p>
+                <button class="btn btn-success rounded-pill mt-auto w-100" style="background: #10b981; border: none;">Try for Free</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

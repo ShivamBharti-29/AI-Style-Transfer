@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" style="padding-top: 120px; padding-bottom: 80px;">
+    <div class="row align-items-center g-5">
+        
+        <!-- Left Side: Branding & Socials -->
+        <div class="col-lg-5 text-center text-lg-start">
+            <div class="mb-4">
+                <h1 style="font-family: 'Orbitron'; font-size: 3rem; color: #a855f7; text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);">
+                    NeuralArt
+                </h1>
+                <p class="text-secondary fs-5 mt-3">
+                    Have questions or feedback? Our team is here to help you redefine reality.
+                </p>
+            </div>
+
+            <div class="mt-5">
+                <h5 style="font-family: 'Orbitron'; color: #fff; margin-bottom: 20px;">CONNECT WITH US</h5>
+                <div class="d-flex justify-content-center justify-content-lg-start gap-4">
+                    <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <div class="mt-5 text-secondary small">
+                <p><i class="fas fa-envelope me-2 text-purple"></i> support@neuralart.ai</p>
+                <p><i class="fas fa-map-marker-alt me-2 text-purple"></i> Innovation Hub, Silicon Valley</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Contact Card -->
+        <div class="col-lg-7">
+            <div class="glass-morphism p-5 shadow-lg" style="border-left: 3px solid #a855f7;">
+                <h2 class="mb-4" style="font-family: 'Orbitron'; letter-spacing: 2px;">SEND A MESSAGE</h2>
+                
+                <form>
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small">NAME</label>
+                        <input type="text" class="form-control bg-transparent text-white border-secondary py-2" placeholder="Your full name">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small">EMAIL ADDRESS</label>
+                        <input type="email" class="form-control bg-transparent text-white border-secondary py-2" placeholder="name@example.com">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-secondary small">YOUR MESSAGE</label>
+                        <textarea class="form-control bg-transparent text-white border-secondary" rows="5" placeholder="How can we help you?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm" 
+                            style="background: linear-gradient(45deg, #a855f7, #7e22ce); border: none;">
+                        SEND MESSAGE <i class="fas fa-paper-plane ms-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .text-purple { color: #a855f7; }
+    
+    .social-btn {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: 0.3s all ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-btn:hover {
+        background: #a855f7;
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+    }
+
+    .form-control:focus {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #a855f7;
+        color: white;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
+    }
+</style>
+{% endblock %}
