@@ -36,7 +36,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 encoder = VGGEncoder('vgg_normalised.pth').to(device)
 decoder = Decoder().to(device)
 # Use your specific path as provided in your original code
-decoder.load_state_dict(torch.load('adain-style-transfer/experiment/final_model/decoder_2.pth'))
+decoder.load_state_dict(torch.load('D:/adain-style-transfer/experiment/final_model/decoder_2.pth'))
 
 encoder.eval()
 decoder.eval()
