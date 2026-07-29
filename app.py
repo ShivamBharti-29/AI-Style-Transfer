@@ -46,6 +46,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 def style_transfer(content_image, style_image, encoder, decoder, alpha, device):
+    print("Step 1: Starting style transfer", flush=True)
     content_transform = transforms.Compose([
         transforms.Resize(256),
         transforms.ToTensor()
@@ -54,14 +55,23 @@ def style_transfer(content_image, style_image, encoder, decoder, alpha, device):
         transforms.Resize(256),
         transforms.ToTensor()
     ])
+    print("Step 2: Images transformed", flush=True)
+
     content_image = content_transform(content_image).unsqueeze(0).to(device)
     style_image = style_transform(style_image).unsqueeze(0).to(device)
+
+    print("Step 3: Running content encoder", flush=True)
     with torch.no_grad():
         content_feats = encoder(content_image, is_test=True)
+        print("Step 4: Content encoded", flush=True)
         style_feats = encoder(style_image, is_test=True)
+        print("Step 5: Style encoded", flush=True)
         stylized_feats = adaptive_instance_normalization(content_feats, style_feats)
+        print("Step 6: AdaIN completed", flush=True)
         stylized_feats = alpha * stylized_feats + (1 - alpha) * content_feats
+        print("Step 7: Running decoder", flush=True)
         stylized_image = decoder(stylized_feats)
+        print("Step 8: Decoder finished", flush=True)
     return stylized_image
 
 def save_image(image, path):
